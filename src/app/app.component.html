@@ -1,0 +1,11 @@
+<div class="min-h-screen flex flex-column ">
+  <div class="align-items-center p-3 surface-section px-5 flex justify-content-between relative lg:static">
+    <img src="../assets/Vector%20(1).png" style="margin:0;height: 100px">
+    <p-menubar *ngIf="menuItems" [model]="menuItems"></p-menubar>
+  </div>
+  <div class="p-3 flex flex-column flex-auto surface-ground">
+    <div class="border-2  surface-border border-round surface-section flex-auto">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

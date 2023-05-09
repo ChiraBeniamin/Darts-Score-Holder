@@ -1,0 +1,41 @@
+<div class="flex-column align-items-center surface-section px-4 py-8 md:px-6 lg:px-8">
+  <h1>Game Setup</h1>
+  <div class="grid">
+    <div class="col-12 lg:col-10">
+      <form class="grid formgrid p-fluid" [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+        <div class="field mb-4 col-12">
+          <label for="name" class="font-medium text-900">Game Name</label>
+          <input name="name" id="name" type="text" formControlName="name" pInputText>
+        </div>
+        <div class="field mb-4 col-12 md:col-6">
+          <label for="playerOne" class="font-medium text-900">Player One</label>
+          <input id="playerOne" name="playerOne" type="text" pInputText formControlName="playerOne">
+        </div>
+        <div class="field mb-4 col-12 md:col-6">
+          <label for="playerTwo" class="font-medium text-900">Player Two</label>
+          <input id="playerTwo" type="text" pInputText formControlName="playerTwo">
+        </div>
+        <div class="field mb-4 col-12 md:col-6">
+          <label class="font-medium text-900">First to ...</label>
+          <p-dropdown name="legOptions" inputId="country" optionValue="label" formControlName="legOptions"
+                      [options]="legOptions"
+                      [showClear]="true" placeholder="Select a option">
+            <ng-template let-legOption pTemplate="item">
+              <div class="flex align-items-center">
+                <div>{{legOption.label}}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+        <div class="field mb-4 col-12 md:col-6">
+          <label for="numLegs" class="font-medium text-900">Number of legs</label>
+          <input id="numLegs" name="numLegs" type="text" pInputText formControlName="numLegs">
+        </div>
+        <div class="col-12">
+          <button type="submit" pButton pRipple label="Start Game"
+                  class="w-auto mt-3"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
